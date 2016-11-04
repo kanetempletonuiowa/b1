@@ -3,6 +3,7 @@ package warehouse.event;
 public class Event {
 	
 	private int fireTime;
+	private Task doTask;
 	
 	public Event(int t) {
 		fireTime=t;
