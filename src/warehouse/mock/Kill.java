@@ -1,4 +1,3 @@
-//ends simulation
 package warehouse.mock;
 
 import warehouse.Master;
