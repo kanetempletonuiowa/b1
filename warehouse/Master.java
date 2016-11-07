@@ -1,24 +1,17 @@
 package warehouse;
 
 import java.util.PriorityQueue;
-import warehouse.event.Event;
+
 
 public class Master {
 	
-	private static int ticks;
-	private static boolean running;
+	//private static int ticks;
+	//private static boolean running;
 	
-	private static PriorityQueue<Event> eventQueue;
-	
-	
-	
-	
-	public static void main(String[] args) {
-		eventQueue = new PriorityQueue<>();
-		ticks=0;
-		start();
-	}
-	
+	public static PriorityQueue eventQueue = new PriorityQueue();
+	protected static MockInventory inventoryMock = new MockInventory();
+	protected static Orders masterOrders = new Orders();
+	/*
 	public static void start() {
 		running=true;
 		run();
@@ -27,13 +20,20 @@ public class Master {
 	public static void stop() {
 		running=false;
 	}
-	
+	*/
 	private static void run() {
-		while (running) {
-
+		while (!eventQueue.isEmpty()) {
+			// handle simulation
 		}
 	}
 	
-	public static void addEvent(Event e) {
+	
+	public static void main(String[] args) {
+		Master M = new Master();
+		M.masterOrders.initialOrders(10);
+		
+		System.out.println(M.masterOrders.currentOrders.size());
+		System.out.println(M.eventQueue.size());
 	}
+	
 }
