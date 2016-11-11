@@ -1,5 +1,8 @@
-# b1
+# Comments
 
-I was having trouble with the original "master" branch, so I created a new branch 
-called "newmaster" with my updated work and set it as the new default branch.
-It now contains all of the files necessary for a very basic mock simulation.
+If you wish to leave a message for everybody in the group to see, please edit the README file and add your comment to the top of the list below, so that the most recent comments are on top.
+
+~~~~~~~~~~~~
+
+Test comment.
+- Kane Templeton
