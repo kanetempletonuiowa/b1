@@ -1,3 +1,5 @@
+package warehouse.inventory;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,12 +10,12 @@
  *
  * @author hanbo
  */
-public class item extends inventory{
+public class Item extends Inventory{
     int quantity;
     Boolean outofstock;
     String itemname;
     
-    item (String itemname,int q){
+    Item (String itemname,int q){
         this.itemname = itemname;
         this.quantity = q;
         this.outofstock = b;

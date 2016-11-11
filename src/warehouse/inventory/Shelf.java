@@ -1,3 +1,5 @@
+package warehouse.inventory;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +10,7 @@
  *
  * @author hanbo
  */
-public class shelf extends inventory{
+public class Shelf extends Inventory{
     int shelfnum;
     String itemname;
     

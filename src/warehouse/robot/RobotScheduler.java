@@ -1,3 +1,5 @@
+package warehouse.robot;
+
 import java.util.ArrayList;
 public class RobotScheduler {
 	//Arraylist of robots and booleans for three charging stations to see if they're open, coordinates to be determined.

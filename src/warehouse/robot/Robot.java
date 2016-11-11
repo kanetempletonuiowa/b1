@@ -1,3 +1,5 @@
+package warehouse.robot;
+
 import java.util.ArrayList;
 public class Robot {
 	

@@ -1,3 +1,5 @@
+package warehouse.inventory;
+
 
 import java.util.HashMap;
 
@@ -11,7 +13,7 @@ import java.util.HashMap;
  *
  * @author hanbo
  */
-public class inventory {
+public class Inventory {
     HashMap inventory = new HashMap<Integer,String>();
     int x;
     String itemname;
@@ -19,7 +21,7 @@ public class inventory {
     int s;
     
     
-    public void inventory(int x, String itemname){
+    public void Inventory(int x, String itemname){
         inventory.put(x, itemname);
         
     }
