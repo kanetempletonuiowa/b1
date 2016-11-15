@@ -1,6 +1,6 @@
-package warehouse.orders;
+package production;
 
-import warehouse.items.Item;
+import production.Item;
 
 
 public class CustomerOrderTest {

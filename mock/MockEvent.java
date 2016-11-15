@@ -1,6 +1,6 @@
-package warehouse.mock;
+package production.mock;
 
-import warehouse.event.Event;
+import production.Event;
 
 /*
     MockEvent

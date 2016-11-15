@@ -1,8 +1,8 @@
-package warehouse.orders;
+package production;
 
 import java.util.ArrayList;
-import warehouse.items.Item;
-import warehouse.Master;
+import production.Item;
+import production.Master;
 
 public class CustomerOrder extends Master implements Comparable<CustomerOrder> {
 	ArrayList itemsInOrder = new ArrayList<Item>();

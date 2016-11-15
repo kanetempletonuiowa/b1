@@ -1,4 +1,4 @@
-package warehouse.inventory;
+package production;
 
 
 import java.util.HashMap;

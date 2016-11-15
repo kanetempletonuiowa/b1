@@ -1,7 +1,8 @@
-package warehouse.mock;
+package production.mock;
 
-import warehouse.Master;
-import warehouse.event.Task;
+import production.Master;
+import production.Production;
+import production.Task;
 
 /*
     Kill
@@ -18,7 +19,7 @@ public class Kill implements Task {
     */
     @Override
     public void fire() {
-        Master.stop();
+        Production.getMaster().stop();
     }
     
 

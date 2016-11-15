@@ -1,9 +1,9 @@
-package warehouse;
+package production;
 
 import java.util.HashMap;
 
 public class MockInventory {
-	protected HashMap inventory = new HashMap<Integer, String>();
+	protected static HashMap inventory = new HashMap<Integer, String>();
 	
 	public MockInventory() {
 		inventory.put(0, "item0");

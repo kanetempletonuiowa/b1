@@ -1,7 +1,8 @@
-package warehouse.mock;
+package production.mock;
 
-import warehouse.Master;
-import warehouse.event.Task;
+import production.Master;
+import production.Production;
+import production.Task;
 
 
 /*
@@ -25,7 +26,7 @@ public class PrintTask implements Task {
         print text using Master's output method
     */
     public void fire() {
-        Master.output(toPrint);
+        Production.getMaster().output(toPrint);
     }
 
 }

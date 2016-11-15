@@ -1,9 +1,9 @@
-package warehouse.orders;
+package production;
 
 import java.util.ArrayList;
 import java.util.Random;
-import warehouse.Master;
-import warehouse.items.Item;
+import production.Master;
+import production.Item;
 
 
 public class Orders extends Master {

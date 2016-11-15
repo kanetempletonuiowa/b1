@@ -1,6 +1,9 @@
-package warehouse.items;
+package production;
 
 //import static org.junit.Assert.*;
+
+import production.Item;
+
 
 //import org.junit.Test;
 

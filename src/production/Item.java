@@ -1,11 +1,11 @@
-package warehouse.items;
+package production;
 
-import warehouse.Master;
+import production.Master;
 
 public class Item extends Master {
-	protected static int itemNum;
-	protected static int quantity;
-	protected static String description;
+	protected int itemNum;
+	protected int quantity;
+	protected String description;
 	
 	
 	public Item (int n, int q) {

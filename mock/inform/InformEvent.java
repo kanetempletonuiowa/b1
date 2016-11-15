@@ -1,7 +1,7 @@
-package warehouse.mock.inform;
+package production.mock.inform;
 
-import warehouse.event.Event;
-import warehouse.event.Task;
+import production.Event;
+import production.Task;
 
 //event class to be called by informer. probably didn't need this as a separate class
 

@@ -1,4 +1,6 @@
-package warehouse.inventory;
+package production;
+
+import production.Inventory;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

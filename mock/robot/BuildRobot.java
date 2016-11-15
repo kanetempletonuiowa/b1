@@ -1,9 +1,10 @@
 // Kane Templeton
-package warehouse.mock.robot;
+package production.mock.robot;
 
-import warehouse.Master;
-import warehouse.event.Event;
-import warehouse.event.Task;
+import production.Master;
+import production.Production;
+import production.Event;
+import production.Task;
 
 //event to create a mock robot
 
@@ -19,10 +20,10 @@ class Construct implements Task {
 
     @Override
     public void fire() {
-        Master.output("Building mock robot...");
+        Production.output("Building mock robot...");
         MockRobot r = new MockRobot(x,y);
-        Master.setRobot(r);
-        Master.getRobot().printCoordiantes();
+        Production.getMaster().setRobot(r);
+        Production.getMaster().getRobot().printCoordiantes();
     }
     
 }

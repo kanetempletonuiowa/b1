@@ -1,8 +1,9 @@
-package warehouse.mock.robot;
+package production.mock.robot;
 
-import warehouse.Master;
-import warehouse.event.Event;
-import warehouse.event.Task;
+import production.Master;
+import production.Production;
+import production.Event;
+import production.Task;
 
 //event for moving a mock robot
 
@@ -21,7 +22,7 @@ class MoveRobot implements Task {
     @Override
     public void fire() {
        robot.move(toX, toY);
-       Master.output("Robot being moved. New Coordinates:");
+       Production.output("Robot being moved. New Coordinates:");
        robot.printCoordiantes();
     }
     

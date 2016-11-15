@@ -1,8 +1,9 @@
-package warehouse.mock.inform;
+package production.mock.inform;
 
-import warehouse.Master;
-import warehouse.event.Event;
-import warehouse.event.Tickable;
+import production.Master;
+import production.Production;
+import production.Event;
+import production.Tickable;
 
 
 /*
@@ -23,7 +24,7 @@ public class Informer implements Tickable {
         adds an event to list current queued events at time 5
     */
     public void initialEvents() {
-        Master.addEvent(new InformEvent(5, new InformTask()));
+        Production.getMaster().addEvent(new InformEvent(5, new InformTask()));
     }
     
     /*
@@ -34,7 +35,7 @@ public class Informer implements Tickable {
         TODO: probably remove this method from tickable interface
     */
     public void addEvent(Event e) {
-        Master.addEvent(e);
+        Production.getMaster().addEvent(e);
     }
     
     /*

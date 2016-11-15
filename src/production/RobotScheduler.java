@@ -1,4 +1,4 @@
-package warehouse.robot;
+package production;
 
 import java.util.ArrayList;
 public class RobotScheduler {

@@ -1,9 +1,10 @@
-package warehouse.mock.inform;
+package production.mock.inform;
 
 import java.util.PriorityQueue;
-import warehouse.Master;
-import warehouse.event.Event;
-import warehouse.event.Task;
+import production.Master;
+import production.Production;
+import production.Event;
+import production.Task;
 
 /*
     InformTask
@@ -23,9 +24,9 @@ public class InformTask implements Task {
         lists all events currently in the Master event queue
     */
     public void fire() {
-        PriorityQueue<Event> q = Master.getEventQueue();
+        PriorityQueue<Event> q = Production.getMaster().getEventQueue();
         PriorityQueue<Event> q2 = new PriorityQueue<>(q);
-        Master.output("Current Queued Events:");
+        Production.getMaster().output("Current Queued Events:");
         while (q2.size()>0) {
             Event e = q2.poll();
             System.out.println("\t"+e.getName()+": will fire at time "+e.getFireTime());

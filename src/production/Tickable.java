@@ -1,4 +1,6 @@
-package warehouse.event;
+package production;
+
+import production.Event;
 
 /*
     Tickable

@@ -1,17 +1,7 @@
-package warehouse;
+package production;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
-import warehouse.event.Event;
-import warehouse.event.Tickable;
-import warehouse.mock.inform.InformEvent;
-import warehouse.mock.inform.InformTask;
-import warehouse.mock.inform.Informer;
-import warehouse.mock.Kill;
-import warehouse.mock.MockEvent;
-import warehouse.mock.robot.BuildRobot;
-import warehouse.mock.robot.MockRobot;
-
 /*
     Master
     @author: Kane Templeton
@@ -20,15 +10,17 @@ import warehouse.mock.robot.MockRobot;
 
 public class Master {
 	
-	private static boolean running;
-        private static int clockTime;
+	private boolean running;
+        private int clockTime;
         
-        //mock objects
-        private static Informer masterInformer;
-        private static MockRobot testBot;
 	
-	protected static PriorityQueue<Event> eventQueue;
-        protected static ArrayList<Tickable> activeEntities;
+	protected PriorityQueue<Event> eventQueue;
+        protected ArrayList<Tickable> activeEntities;
+        
+        public Master() {
+            eventQueue = new PriorityQueue<>();
+            clockTime=0;
+        }
         
         
 	/*
@@ -36,7 +28,7 @@ public class Master {
             @author: Kane Templeton
             start the simulation
         */
-	public static void start() {
+	public void start() {
             output("Starting simulation...");
             running=true;
             run();
@@ -47,7 +39,7 @@ public class Master {
             @author: Kane Templeton
             end the simulation
         */
-	public static void stop() {
+	public void stop() {
             output("END SIMULATION.");
             running=false;
 	}
@@ -57,7 +49,7 @@ public class Master {
             @author: Kane Templeton
             contains the running loop for the simulation
         */
-	private static void run() {
+	private void run() {
             double clock=System.currentTimeMillis();
             while (running) {
                 //create a reasonable time structure, time incrememts approx. every second
@@ -74,33 +66,15 @@ public class Master {
 	}
         
 	
-        /*
-            main(String[] args)
-            @author: Kane Templeton
-            main method. initializes event queue
-            and starts simulation
-        */
-	public static void main(String[] args) {
-		eventQueue = new PriorityQueue<>();
-                clockTime=0;
-                initializeEvents();
-		start();
-	}
         
         /*
             initializeEvents()
             @author: Kane Templeton
             add events to the event queue before the simulation begins
         */
-        private static void initializeEvents() {
+        public void initializeEvents() {
             // initialize events here
-            masterInformer = new Informer();
-            addEvent(new BuildRobot(25,100,100));
-            addEvent(new MockEvent(20,"test 2"));
-            addEvent(new MockEvent(10,"test 1"));
-            addEvent(new Event("End Simulation",60,new Kill()));
-            masterInformer.addEvent(new InformEvent(30,new InformTask()));
-            masterInformer.addEvent(new InformEvent(50,new InformTask()));
+
         }
         
         /*
@@ -108,7 +82,7 @@ public class Master {
             @author: Kane Templeton
             add an event to the event queue
         */
-        public static void addEvent(Event e) {
+        public void addEvent(Event e) {
             eventQueue.add(e);
         }
         
@@ -117,7 +91,7 @@ public class Master {
             @author: Kane Templeton
             return the Master event queue
         */
-        public static PriorityQueue getEventQueue() {
+        public PriorityQueue getEventQueue() {
             return eventQueue;
         }
         
@@ -126,7 +100,7 @@ public class Master {
             @author: Kane Templeton
             return the current Master clock time
         */
-        public static int getMasterClockTime() {return clockTime;}
+        public int getMasterClockTime() {return clockTime;}
         
         /*
             output(String msg)
@@ -134,22 +108,9 @@ public class Master {
             output a message to the console 
             and include the current clock time
         */
-        public static void output(String msg) {
+        public void output(String msg) {
             System.out.println("[time="+getMasterClockTime()+"]"+msg);
         }
         
-        /*
-            setRobot(MockRobot r)
-            @author: Kane Templeton
-            set the test robot
-        */
-        public static void setRobot(MockRobot r) {testBot=r;}
-        
-        /* 
-            getRobot()
-            @author: Kane Templeton
-            return the test robot
-        */
-        public static MockRobot getRobot() {return testBot;}
 	
 }
