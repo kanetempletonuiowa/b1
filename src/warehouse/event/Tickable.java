@@ -1,5 +1,12 @@
 package warehouse.event;
 
+/*
+    Tickable
+    @author: Kane Templeton
+    Represents anything that can add events to the queue
+    and have continuous "tick" logic
+*/
+
 public interface Tickable {
     
     /*

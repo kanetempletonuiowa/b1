@@ -3,7 +3,11 @@ package warehouse.mock;
 import warehouse.Master;
 import warehouse.event.Task;
 
-//task that stops the simulation
+/*
+    Kill
+    @author: Kane Templeton
+    Task to stop the simulation
+*/
 
 public class Kill implements Task {
 

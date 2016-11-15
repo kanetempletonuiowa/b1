@@ -4,9 +4,11 @@ import warehouse.Master;
 import warehouse.event.Event;
 import warehouse.event.Tickable;
 
-//fake robot that can update its coordinates
-
-
+/*
+    MockRobot
+    @author: Kane Templeton
+    fake robot that can update coordinates
+*/
 public class MockRobot implements Tickable {
     
     private int xCoordinate,yCoordinate;

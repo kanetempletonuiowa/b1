@@ -1,7 +1,11 @@
 package warehouse.event;
 
-//events for Master's event queue
-//compared by fireTime
+
+/*
+    Event
+    @author: Kane Templeton
+    events for Master event queue
+*/
 
 public class Event implements Comparable<Event> {
 	

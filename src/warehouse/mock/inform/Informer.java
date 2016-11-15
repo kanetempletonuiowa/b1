@@ -4,7 +4,12 @@ import warehouse.Master;
 import warehouse.event.Event;
 import warehouse.event.Tickable;
 
-//reports the current queued events to the console
+
+/*
+    Informer
+    @author: Kane Templeton
+    tickable object that informs users of current simulation info
+*/
 
 public class Informer implements Tickable {
     

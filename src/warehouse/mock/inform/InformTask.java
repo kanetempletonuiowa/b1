@@ -1,6 +1,3 @@
-// Kane Templeton
-// InformTask.java
-
 package warehouse.mock.inform;
 
 import java.util.PriorityQueue;
@@ -8,7 +5,11 @@ import warehouse.Master;
 import warehouse.event.Event;
 import warehouse.event.Task;
 
-//could probably have combined this with the InformEvent task
+/*
+    InformTask
+    @author: Kane Templeton
+    task for InformEvent
+*/
 
 public class InformTask implements Task {
     

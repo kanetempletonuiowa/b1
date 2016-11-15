@@ -1,12 +1,10 @@
-// Kane Templeton
-// MoveEvent.java
 package warehouse.mock.robot;
 
 import warehouse.Master;
 import warehouse.event.Event;
 import warehouse.event.Task;
 
-//event to move a robot
+//event for moving a mock robot
 
 //task for the event
 class MoveRobot implements Task {

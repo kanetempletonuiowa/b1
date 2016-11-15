@@ -1,5 +1,10 @@
 package warehouse.event;
 
+/*
+    Task
+    @author: Kane Templeton
+    task to be fired when an event is called
+*/
 
 public interface Task {
 	

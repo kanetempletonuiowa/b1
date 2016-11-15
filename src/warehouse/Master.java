@@ -12,6 +12,11 @@ import warehouse.mock.MockEvent;
 import warehouse.mock.robot.BuildRobot;
 import warehouse.mock.robot.MockRobot;
 
+/*
+    Master
+    @author: Kane Templeton
+    main class, runs the simulation
+*/
 
 public class Master {
 	
@@ -140,7 +145,7 @@ public class Master {
         */
         public static void setRobot(MockRobot r) {testBot=r;}
         
-        /*
+        /* 
             getRobot()
             @author: Kane Templeton
             return the test robot

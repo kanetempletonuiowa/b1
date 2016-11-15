@@ -2,7 +2,12 @@ package warehouse.mock;
 
 import warehouse.event.Event;
 
-//a basic "event" that prints text
+/*
+    MockEvent
+    @author: Kane Templeton
+    an example of an event that prints text
+    using the PrintTask Task
+*/
 
 public class MockEvent extends Event {
 

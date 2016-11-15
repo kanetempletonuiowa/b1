@@ -5,9 +5,9 @@ import warehouse.Master;
 import warehouse.event.Event;
 import warehouse.event.Task;
 
-//event to create a dummy robot
+//event to create a mock robot
 
-//task for the event
+//task class for the event
 class Construct implements Task {
     
     private int x,y;

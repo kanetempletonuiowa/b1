@@ -1,12 +1,14 @@
-// Kane Templeton
-// PrintTask.java
-
 package warehouse.mock;
 
 import warehouse.Master;
 import warehouse.event.Task;
 
-//task for the MockEvent class
+
+/*
+    PrintTask
+    @author: Kane Templeton
+    task for the MockEvent class
+*/
 
 
 public class PrintTask implements Task {
