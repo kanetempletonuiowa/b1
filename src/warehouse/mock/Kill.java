@@ -7,6 +7,11 @@ import warehouse.event.Task;
 
 public class Kill implements Task {
 
+    /*
+        fire()
+        @author: Kane Templeton
+        tells Master to stop the simulation
+    */
     @Override
     public void fire() {
         Master.stop();

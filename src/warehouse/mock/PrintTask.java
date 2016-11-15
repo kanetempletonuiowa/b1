@@ -17,6 +17,11 @@ public class PrintTask implements Task {
         toPrint=s;
     }
 
+    /*
+        fire()
+        @author: Kane Templeton
+        print text using Master's output method
+    */
     public void fire() {
         Master.output(toPrint);
     }

@@ -16,6 +16,11 @@ public class InformTask implements Task {
         
     }
     
+    /*
+        fire()
+        @author: Kane Templeton
+        lists all events currently in the Master event queue
+    */
     public void fire() {
         PriorityQueue<Event> q = Master.getEventQueue();
         PriorityQueue<Event> q2 = new PriorityQueue<>(q);

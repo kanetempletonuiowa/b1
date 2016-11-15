@@ -33,5 +33,14 @@ public class MockRobot implements Tickable {
     public void addEvent(Event e) {
         Master.addEvent(e);
     }
+    
+    /*
+        tick()
+        @author: Kane Templeton
+        mock ticking; increment coordinates by 1
+    */
+    public void tick() {
+        move(xCoordinate+1,yCoordinate+1);
+    }
 
 }
