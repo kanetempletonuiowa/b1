@@ -2,11 +2,10 @@ package production;
 
 import java.util.ArrayList;
 public class RobotScheduler {
-	//Arraylist of robots and booleans for three charging stations to see if they're open, coordinates to be determined.
+	//Arraylist of robots and boolean for charging station to see if it's open open, coordinates to be determined.
 	ArrayList<Robot> robots = new ArrayList();
-	boolean station1 = true;
-	boolean station2 = true;
-	boolean station3 = true;
+	boolean chargingstationopen = true;
+	//Add another array list of arrays to contain the points for the line to the charging station
 	
 	//Add robots, to be changed later w/Floor
 	public RobotScheduler(){
@@ -26,6 +25,25 @@ public class RobotScheduler {
 		//Use requestRoute for the selected robot to get a route from the Floor to go the shelf area.	
 	}
 	
+	public void checkRobots(){
+		for(int i=0; i<robots.size(); i++){
+			String status = robots.get(i).getStatus();
+			if(status=="wait-toShelf"){
+				robots.get(i).setTask("toStation");
+				//Use requestRoute to get a route from shelf area to picker
+			} else if (status=="wait-returnShelf"){
+				robots.get(i).setTask("returnShelf");
+				//Use requestRoute to get a route from picker to shelf area
+			} else if (status=="wait-toCharge"){
+				robots.get(i).setTask("toCharge");
+				//Use requestRoute to get a route from shelf area to charging area
+			} else if (status=="wait-toHome"){
+				robots.get(i).setTask("toHome");
+				//Use requestRoute to get route from current area to home
+			}
+		}
+	}
+	
 	//Sends a route request to the Floor in the form of [x start, y start, x destination, y destination].
 	public int[] requestRoute(Robot r, int[] destination){
 		int[] pathinfo = new int[3];
@@ -37,9 +55,8 @@ public class RobotScheduler {
 	}
 	
 	public void tick(){
-		//Stuff goes here. 
-		
-		
+		this.checkRobots();
 	}
 
 }
+
