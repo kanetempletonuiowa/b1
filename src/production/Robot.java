@@ -20,8 +20,12 @@ public class Robot {
 	}
 	
 	//When sent a route from the floor, set this robot to "active".
-	//Tasks are "toShelf", "toCharge", "toStation", toShelf2", "toHome" and "charge". 
-	//toShelf finds a shelf to pick up, toShelf2 finds a place to set the shelf down 
+	//toShelf - robot moves from robot station to shelves to get an item
+	//toCharge - robot moves to charging station
+	//toStation - robot moves to picker, drops off shelf
+	//returnShelf - robot returns shelf to location set by inventory 
+	//charge - robot charging
+	//Once the robot is finished with its task, it will wait for the next task using the "wait-(task)" String
 	public void setRoute(ArrayList<int[]> newroute, String task){
 		this.task=task;
 		route = (ArrayList<int[]>)newroute.clone();
@@ -46,12 +50,12 @@ public class Robot {
 					charge-=0.25;
 					this.getShelf();
 					//Ask robot scheduler for route to station
-					this.setTask("toStation");
+					this.setTask("wait-toStation");
 				}
 				if(task=="toStation"){
 					charge-=0.25;
 					//Ask robot scheduler for route to drop off shelf
-					this.setTask("toShelf2");
+					this.setTask("wait-returnShelf");
 				}
 				if(task=="toCharge"){
 					task="charge";
@@ -60,19 +64,19 @@ public class Robot {
 					charge+=4.0;
 					if(charge>=100.0){
 						charge=100.0;
-						this.setTask("toHome");
+						this.setTask("wait-toHome");
 					}
 				}
 				if(task=="toHome"){
 					this.setTask("none");
 				}
-				if(task=="toShelf2"){
+				if(task=="returnShelf"){
 					charge-=0.25;
 					this.setShelf();
 					if(charge<=30.0){
-						
+						this.setTask("wait-toCharge");
 					} else {
-						this.setTask("toHome");
+						this.setTask("wait-toHome");
 					}
 				}
 			}
@@ -104,3 +108,4 @@ public class Robot {
 	}
 
 }
+
