@@ -17,21 +17,24 @@ public class RobotScheduler {
 	
 	//@author: Alex Wang
 	//Select the first idle robot to carry out the order. 
-	public void carryOrder(){//pass order in parameters later
+	public void carryOrder(int x, int y){
 		int selectrobot = 0;
 		for(int i=0; i<robots.size(); i++){
 			if(robots.get(i).getStatus() != "none"){
 				selectrobot=i;
 			}
 		}
-		//Use requestRoute for the selected robot to get a route from the Floor to go the shelf area.	
+		int[] destination = new int[2];
+		destination[0]=x;
+		destination[0]=y;
+		this.requestRoute(robots.get(i), destination);
 	}
 	
 	//@author: Alex Wang
 	public void checkRobots(){
 		for(int i=0; i<robots.size(); i++){
 			String status = robots.get(i).getStatus();
-			if(status=="wait-toShelf"){
+			if(status=="wait-toStation"){
 				robots.get(i).setTask("toStation");
 				//Use requestRoute to get a route from shelf area to picker
 			} else if (status=="wait-returnShelf"){
@@ -50,7 +53,7 @@ public class RobotScheduler {
 	//@author: Alex Wang
 	//Sends a route request to the Floor in the form of [x start, y start, x destination, y destination].
 	public int[] requestRoute(Robot r, int[] destination){
-		int[] pathinfo = new int[3];
+		int[] pathinfo = new int[4];
 		pathinfo[0]=r.getX();
 		pathinfo[1]=r.getY();
 		pathinfo[2]=destination[0];
