@@ -12,6 +12,7 @@ public class Robot {
 	ArrayList<int[]> route = new ArrayList();
 	//Variable for shelf being carried
 	
+	//@author: Alex Wang
 	//Assigns the robot a unique reference number, as well as it's starting position x and y. 
 	public Robot(int number, int x, int y){
 		this.number=number;
@@ -19,6 +20,7 @@ public class Robot {
 		this.y=y;
 	}
 	
+	//@author: Alex Wang
 	//When sent a route from the floor, set this robot to "active".
 	//toShelf - robot moves from robot station to shelves to get an item
 	//toCharge - robot moves to charging station
@@ -31,10 +33,11 @@ public class Robot {
 		route = (ArrayList<int[]>)newroute.clone();
 	}
 	
+	//@author: Alex Wang
 	public void setTask(String s){
 		task=s;
 	}
-	
+	//@author: Alex Wang
 	//Move robot towards destination. Change the route array list to reflect remaining route. Uses 0.5 charge per step.
 	public void tick(){
 		if(task!="none"){
@@ -83,26 +86,32 @@ public class Robot {
 		}
 	}
 	
+	//@author: Alex Wang
 	public void getShelf(){
 		//Pick up the shelf
 	}
 	
+	//@author: Alex Wang
 	public void setShelf(){
 		//Set shelf down at location prompted
 	}
 	
+	//@author: Alex Wang
 	public String getStatus(){
 		return task;
 	}
 	
+	//@author: Alex Wang
 	public int getNumber(){
 		return number;
 	}
 	
+	//@author: Alex Wang
 	public int getX(){
 		return x;
 	}
 	
+	//@author: Alex Wang
 	public int getY(){
 		return y;
 	}
