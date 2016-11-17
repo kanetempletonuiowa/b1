@@ -7,6 +7,7 @@ public class RobotScheduler {
 	boolean chargingstationopen = true;
 	//Add another array list of arrays to contain the points for the line to the charging station
 	
+	//@author: Alex Wang
 	//Add robots, to be changed later w/Floor
 	public RobotScheduler(){
 		robots.add(new Robot(1,5,5));
@@ -14,6 +15,7 @@ public class RobotScheduler {
 		robots.add(new Robot(3,11,11));
 	}
 	
+	//@author: Alex Wang
 	//Select the first idle robot to carry out the order. 
 	public void carryOrder(){//pass order in parameters later
 		int selectrobot = 0;
@@ -25,6 +27,7 @@ public class RobotScheduler {
 		//Use requestRoute for the selected robot to get a route from the Floor to go the shelf area.	
 	}
 	
+	//@author: Alex Wang
 	public void checkRobots(){
 		for(int i=0; i<robots.size(); i++){
 			String status = robots.get(i).getStatus();
@@ -44,6 +47,7 @@ public class RobotScheduler {
 		}
 	}
 	
+	//@author: Alex Wang
 	//Sends a route request to the Floor in the form of [x start, y start, x destination, y destination].
 	public int[] requestRoute(Robot r, int[] destination){
 		int[] pathinfo = new int[3];
@@ -54,6 +58,7 @@ public class RobotScheduler {
 		return pathinfo;
 	}
 	
+	//@author: Alex Wang
 	public void tick(){
 		this.checkRobots();
 	}
