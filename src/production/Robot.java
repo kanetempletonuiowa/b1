@@ -40,10 +40,10 @@ public class Robot {
 	//@author: Alex Wang
 	//Move robot towards destination. Change the route array list to reflect remaining route. Uses 0.5 charge per step.
 	public void tick(){
-		if(task!="none"){
-			x=route.get(0)[0];
-			y=route.get(0)[1];
+		if(task!="none" && task!="wait-toStation" && task!="wait-returnShelf" && task!="wait-toHome" && task!="wait-toCharge"){
 			if(route.size()>0){
+				x=route.get(0)[0];
+				y=route.get(0)[1];
 				route.remove(0);
 				if(charge>0.0){
 					charge-=0.5;
