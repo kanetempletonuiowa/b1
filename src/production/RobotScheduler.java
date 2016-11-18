@@ -31,6 +31,7 @@ public class RobotScheduler {
 	}
 	
 	//@author: Alex Wang
+	//Checks the status of all robots to see if they're done with their tasks. If they are, assign the next task in logical order
 	public void checkRobots(){
 		for(int i=0; i<robots.size(); i++){
 			String status = robots.get(i).getStatus();
