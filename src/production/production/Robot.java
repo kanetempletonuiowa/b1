@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 public class Robot extends Master {
+	//@author: Alex Wang
 	/**
 	 * author: Scott Hoefer (11/2316 )
 	 */
